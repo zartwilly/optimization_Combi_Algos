@@ -1,1 +1,1 @@
-// the init page
+# the init page
