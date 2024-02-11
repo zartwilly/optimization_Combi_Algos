@@ -28,11 +28,15 @@ M_GENERATION = 30     # Number of Generation
 #
 ###############################################################################
 
+
+
+
 ###############################################################################
 # 
 #                   Variables : start
 #
 ###############################################################################
+chromosome = ["D","A","C","B","G","E","F","H"]
 Dist = pd.DataFrame([[0,1,2,3,1,2,3,4],
                      [1,0,1,2,2,1,2,3],
                      [2,1,0,1,3,2,1,2],
@@ -59,6 +63,32 @@ Flow = pd.DataFrame([[0,5,2,4,1,0,0,6],
 #
 ###############################################################################
 
+###############################################################################
+# 
+#                   track variables : start
+#
+###############################################################################
+For_plotting_the_best = np.empty((0, len(chromosome)+1))
+
+Final_Best_in_Generation_X = []
+Worst_Best_in_Generation_X = []
+
+One_Final_Guy = np.empty((0, len(chromosome)+2))
+One_Final_Guy_Final = []
+
+Min_for_all_Generation_for_Mut_1 = np.empty((0, len(chromosome)+1))
+Min_for_all_Generation_for_Mut_2 = np.empty((0, len(chromosome)+1))
+
+Min_for_all_Generation_for_Mut_1_1 = np.empty((0, len(chromosome)+2))
+Min_for_all_Generation_for_Mut_2_2 = np.empty((0, len(chromosome)+2))
+
+Min_for_all_Generation_for_Mut_1_1_1 = np.empty((0, len(chromosome)+2))
+Min_for_all_Generation_for_Mut_2_2_2 = np.empty((0, len(chromosome)+2))
+###############################################################################
+# 
+#                   track variables : ennd
+#
+###############################################################################
 
 
 ###############################################################################
@@ -66,7 +96,7 @@ Flow = pd.DataFrame([[0,5,2,4,1,0,0,6],
 #                   fitness value : start
 #
 ###############################################################################
-chromosome = ["D","A","C","B","G","E","F","H"]
+
 def fitness_value(chromosome):
     """
     compute the cost of the initial solution called chromosome
