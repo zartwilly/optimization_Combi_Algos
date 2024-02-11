@@ -65,7 +65,25 @@ Flow = pd.DataFrame([[0,5,2,4,1,0,0,6],
 #                   fitness value : start
 #
 ###############################################################################
+chromosone = ["D","A","C","B","G","E","F","H"]
 def fitness_value(chromosone):
+    """
+    compute the cost of the initial solution called chromosome
+
+    Parameters
+    ----------
+    chromosone : list
+        DESCRIPTION.
+            list of departments
+    Returns
+    -------
+    None.
+
+    """
+    re_dist_df = Dist.reindex(columns=chromosone, index=chromosone)
+    re_flow_df = Flow.reindex(columns=chromosone, index=chromosone)
+    cost_chromo = sum(sum(np.array(re_dist_df) * np.array(re_flow_df)))
+    return cost_chromo
     
 ###############################################################################
 # 
